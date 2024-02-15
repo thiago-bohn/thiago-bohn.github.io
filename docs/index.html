@@ -15,33 +15,27 @@
     </style>
 </head>
 <body>
-    <!-- Your page content here -->
-
-    <!-- Salesforce Embedded Service SDK -->
-    <script type='text/javascript' src='https://momentum-saas-2426--uat.sandbox.my.site.com/ESWArcosTestGithub1708025728026/assets/js/bootstrap.min.js'></script>
-    <script type='text/javascript'>
-        // Define the function initEmbeddedMessaging
-        function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'es'; // For example, enter 'en' or 'en-US'
-
-                embeddedservice_bootstrap.init(
-                    '00DDy0000008oib',
-                    'ArcosTestGithub',
-                    'https://momentum-saas-2426--uat.sandbox.my.site.com/ESWArcosTestGithub1708025728026',
-                    {
-                        scrt2URL: 'https://momentum-saas-2426--uat.sandbox.my.salesforce-scrt.com'
-                    }
-                );
-            } catch (err) {
-                console.error('Error loading Embedded Messaging: ', err);
-            }
-        };
-
-        // Call the function onload
-        window.onload = function() {
-            initEmbeddedMessaging();
-        };
+        <!-- Your page content here -->
+    
+        <!-- Salesforce Embedded Service SDK -->
+        <script type='text/javascript'>
+    	function initEmbeddedMessaging() {
+    		try {
+    			embeddedservice_bootstrap.settings.language = 'es'; // For example, enter 'en' or 'en-US'
+    
+    			embeddedservice_bootstrap.init(
+    				'00DDy0000008oib',
+    				'ArcosTestGithub',
+    				'https://momentum-saas-2426--uat.sandbox.my.site.com/ESWArcosTestGithub1708025728026',
+    				{
+    					scrt2URL: 'https://momentum-saas-2426--uat.sandbox.my.salesforce-scrt.com'
+    				}
+    			);
+    		} catch (err) {
+    			console.error('Error loading Embedded Messaging: ', err);
+    		}
+    	};
     </script>
+    <script type='text/javascript' src='https://momentum-saas-2426--uat.sandbox.my.site.com/ESWArcosTestGithub1708025728026/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
