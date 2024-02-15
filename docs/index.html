@@ -18,44 +18,24 @@
     <!-- Your page content here -->
 
     <!-- Salesforce Embedded Service SDK -->
-    <script src="https://service.force.com/embeddedservice/5.0/esw.min.js"></script>
-    <script>
-        var initESW = function(gslbBaseURL) {
-            embedded_svc.settings.displayHelpButton = true; // Or false
-            embedded_svc.settings.language = ''; // For example, enter 'en' or 'en-US'
+<script type='text/javascript' src='https://momentum-saas-2426--uat.sandbox.my.site.com/ESWArcosTestGithub1708025728026/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'es'; // For example, enter 'en' or 'en-US'
 
-            // Other settings...
-
-            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-            embedded_svc.settings.entryFeature = 'LiveAgent';
-
-            embedded_svc.init(
-                'https://momentum-saas-2426--uat.sandbox.my.salesforce.com',
-                'https://momentum-saas-2426--uat.sandbox.my.salesforce-sites.com/liveAgentSetupFlow',
-                gslbBaseURL,
-                '00DDy0000008oib',
-                'Atenci_n_Arcos',
-                {
-                    baseLiveAgentContentURL: 'https://c.la3-c1cs-ia7.salesforceliveagent.com/content',
-                    deploymentId: '572Dy00000000Ox',
-                    buttonId: '573Dy00000014Hc',
-                    baseLiveAgentURL: 'https://d.la3-c1cs-ia7.salesforceliveagent.com/chat',
-                    eswLiveAgentDevName: 'Atenci_n_Arcos',
-                    isOfflineSupportEnabled: true
-                }
-            );
-        };
-
-        if (!window.embedded_svc) {
-            var s = document.createElement('script');
-            s.setAttribute('src', 'https://momentum-saas-2426--uat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-            s.onload = function() {
-                initESW(null);
-            };
-            document.body.appendChild(s);
-        } else {
-            initESW('https://service.force.com');
-        }
-    </script>
+			embeddedservice_bootstrap.init(
+				'00DDy0000008oib',
+				'ArcosTestGithub',
+				'https://momentum-saas-2426--uat.sandbox.my.site.com/ESWArcosTestGithub1708025728026',
+				{
+					scrt2URL: 'https://momentum-saas-2426--uat.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
 </body>
 </html>
